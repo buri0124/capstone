@@ -192,10 +192,8 @@ for i in range(25):
 
 # 5. Combine both into one DataFrame
 accounts_df = pd.DataFrame(institutional_accounts + individual_accounts)
-
 accounts_df
 
-accounts_df["Number of Funds"].sum()
 
 if __name__ == "__main__":
     # Generate LP account data and export to CSV
