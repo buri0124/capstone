@@ -212,3 +212,9 @@ for _, row in portfolio_general_info_df.iterrows():
 
 # Convert to DataFrame
 vc_exit_df = pd.DataFrame(vc_exit_events)
+
+
+if __name__ == "__main__":
+    # Generate product master metadata and export to CSV
+    product_master_df = pd.DataFrame(product_rows)
+    product_master_df.to_csv("product_master.csv", index=False)

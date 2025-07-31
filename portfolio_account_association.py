@@ -66,3 +66,9 @@ portfolio_account_map_df
 funds_per_account = portfolio_account_map_df.groupby("ACCOUNTID")["PORTFOLIOCODE"].nunique().reset_index()
 funds_per_account.columns = ["ACCOUNTID", "Num_Funds"]
 funds_per_account
+
+
+if __name__ == "__main__":
+    # Map accounts to portfolios and export to CSV
+    portfolio_account_map_df = pd.DataFrame(mapping)
+    portfolio_account_map_df.to_csv("portfolio_account_map.csv", index=False)
