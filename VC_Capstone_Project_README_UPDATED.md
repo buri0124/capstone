@@ -8,15 +8,15 @@ All final outputs are Snowflake-ready and designed to mirror institutional data 
 
 ---
 
-## 📊 Entity Relationship Diagram
+## UML Class Diagram
 
-The following ERD visualizes relationships across tables such as PORTFOLIO_GENERAL_INFO, ACCOUNT, PERFORMANCE, HOLDINGS, and PRODUCT_MASTER.
+The following UML diagram visualizes the structure and relationships among core tables such as PORTFOLIO_GENERAL_INFO, ACCOUNT, PERFORMANCE, HOLDINGS, Benchmark and PRODUCT_MASTER.
 
 ![ERD](./UML.png)
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 VC_Capstone_Project/
@@ -60,7 +60,7 @@ VC_Capstone_Project/
 
 ---
 
-## 🧭 Getting Started
+## Getting Started
 
 1. Install dependencies:
 ```bash
@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📌 Notes
+## Notes
 
 - All code follows a modular structure and naming aligned with institutional conventions.
 - JSON outputs ensure reproducibility and offline access to metadata.
