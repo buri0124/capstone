@@ -10,7 +10,7 @@ All final outputs are Snowflake-ready and designed to mirror institutional data 
 
 ## UML Class Diagram
 
-The following UML diagram visualizes the structure and relationships among core tables such as PORTFOLIO_GENERAL_INFO, ACCOUNT, PERFORMANCE, HOLDINGS, Benchmark and PRODUCT_MASTER.
+The following UML diagram visualizes the structure and relationships among core tables such as PORTFOLIO_GENERAL_INFO, ACCOUNT, PERFORMANCE, HOLDINGS, BENCHMARK and PRODUCT_MASTER.
 
 ![ERD](./UML.png)
 
