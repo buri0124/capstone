@@ -18,45 +18,56 @@ The following UML diagram visualizes the structure and relationships among core 
 
 ## Project Structure
 
-```
 VC_Capstone_Project/
-├── README.md                  Quick-start guide (this file)
-├── UML.png                    Visual ERD diagram
+├── README.md                     # Quick-start guide
+├── UML.png                     
 
-├── APIs/                      API-based data enrichment
+├── APIs/                         # API-based data enrichment
 │   ├── countries_api.py
 │   ├── extract_currency_api.py
-│   ├── sectors.py
-│   └── manager_json.py
+│   ├── manager_json.py
+│   └── sectors.py
 
-├── JSON/                      Cached API results (lookups)
-│   ├── synthetic_countries.json
-│   ├── currency_lookup.json
-│   └── sectors.json, gics.json
+├── benchmarks/                   # Benchmark fund & performance modules
+│   ├── benchmarck_characteristics.py
+│   ├── benchmark_account_association.py
+│   ├── benchmark_general_information.py
+│   └── benchmark_performance.py
 
-├── portfolio/                 Core entity generators
+├── holdings/                     # Holdings and exit logic
+│   ├── exit.py
+│   ├── holdings.py
+│   └── holdings_metrics.py
+
+├── portfolio/                    # Core portfolio entity generation
 │   ├── account.py
 │   ├── fund_manager.py
-│   ├── portfolio_general_info.py
 │   ├── portfolio_account_association.py
+│   ├── portfolio_general_info.py
+
+├── product/                      # Product & performance logic
 │   ├── performance.py
 │   └── product_master.py
 
-├── holdings/                  Holdings and exit logic
-│   ├── holdings.py
-│   ├── exit.py
-│   └── holdings_metrics.py
+├── JSON/                         # Cached API responses
+│   ├── currency_lookup.json
+│   ├── gics.json
+│   ├── manager_data.json
+│   ├── sectors.json
+│   └── synthetic_countries.json
 
-├── CSVs/                      Final export tables (for Snowflake)
+├── CSVs/                         # Final export tables (for Snowflake)
 │   ├── accounts.csv
+│   ├── df_benchmark_account_association.csv
+│   ├── df_benchmark_characteristics.csv
+│   ├── df_benchmark_general.csv
+│   ├── df_benchmark_performance.csv
+│   ├── fund_managers.csv
 │   ├── holdings.csv
 │   ├── holdings_metrics.csv
-│   ├── portfolio_general_info.csv
 │   ├── portfolio_account_map.csv
+│   ├── portfolio_general_info.csv
 │   └── product_master.csv
-
-└── __pycache__/               Python bytecode cache
-```
 
 ---
 
@@ -70,7 +81,20 @@ pip install -r requirements.txt
 2. Run core modules in order:
 - APIs (to generate JSON)
 - portfolio/
+  1. portfolio_general_info.py
+  2. account.py
+- product/
+  1. product_master.py
+  2. performance.py
 - holdings/
+  1. holdings.py
+  2. holdings_metrics.py
+  3. exit.py
+- benchmarks/
+  1. benchmark_general_information.py
+  2. benchmarck_characteristics.py
+  3. benchmark_performance.py
+  4. benchmark_account_association.py
 - Export to CSVs
 
 3. Upload CSV outputs to Snowflake.
@@ -78,6 +102,4 @@ pip install -r requirements.txt
 ---
 
 ## Notes
-
-- All code follows a modular structure and naming aligned with institutional conventions.
-- JSON outputs ensure reproducibility and offline access to metadata.
+-  Modules not marked with numbers can be run anytime after their dependent data is created.
