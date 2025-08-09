@@ -22,6 +22,7 @@ The following UML diagram visualizes the structure and relationships among core 
 VC_Capstone_Project/
 ├── README.md                     # Quick-start guide
 ├── UML.png                       # Visual UML class diagram
+├── disclosure.doc                # disclosure
 
 ├── APIs/                         # API-based data enrichment
 │   ├── countries_api.py
@@ -30,23 +31,27 @@ VC_Capstone_Project/
 │   └── sectors.py
 
 ├── benchmarks/                   # Benchmark fund & performance modules
+│   ├── benchmarks_summary.doc
 │   ├── benchmarck_characteristics.py
 │   ├── benchmark_account_association.py
 │   ├── benchmark_general_information.py
 │   └── benchmark_performance.py
 
 ├── holdings/                     # Holdings and exit logic
+│   ├── holdings_summary.doc
 │   ├── exit.py
 │   ├── holdings.py
 │   └── holdings_metrics.py
 
 ├── portfolio/                    # Core portfolio entity generation
+│   ├── portfolio_summary.doc
 │   ├── account.py
 │   ├── fund_manager.py
 │   ├── portfolio_account_association.py
 │   └── portfolio_general_info.py
 
 ├── product/                      # Product & performance logic
+│   ├── product_summary.doc
 │   ├── performance.py
 │   └── product_master.py
 
